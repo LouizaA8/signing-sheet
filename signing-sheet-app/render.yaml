@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: ksb-signing-sheet-backend
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run seed && npm start
+    envVars:
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_EMAIL
+        value: admin@kenyasugarboard.go.ke
+      - key: ADMIN_PASSWORD
+        sync: false
+    # Free plan storage is ephemeral: the SQLite file resets on every
+    # redeploy. To persist data across deploys, add a paid-plan disk in the
+    # Render dashboard (Settings > Disks), mount it (e.g. at /var/data), and
+    # set DB_PATH=/var/data/signing-sheet.db as an env var here.

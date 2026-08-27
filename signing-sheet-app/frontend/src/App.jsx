@@ -8,7 +8,7 @@ import SigningSheet from './pages/SigningSheet';
 import AdminPanel from './pages/AdminPanel';
 import EditProfile from './pages/EditProfile';
 
-axios.defaults.baseURL = 'http://localhost:3000';
+axios.defaults.baseURL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
 
 function App() {
   const [user, setUser] = useState(null);

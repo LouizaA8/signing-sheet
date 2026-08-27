@@ -6,7 +6,7 @@ import { dirname } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const dbPath = join(__dirname, '../signing-sheet.db');
+const dbPath = process.env.DB_PATH || join(__dirname, '../signing-sheet.db');
 let db;
 
 export function getDB() {
