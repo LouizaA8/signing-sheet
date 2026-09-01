@@ -252,7 +252,7 @@ function Dashboard({ user }) {
 
               <div className="form-group">
                 <label>Meeting Dates</label>
-                <DatePicker value={dates} onChange={setDates} minDate={new Date()} />
+                <DatePicker value={dates} onChange={setDates} />
               </div>
 
               <div className="form-group">
